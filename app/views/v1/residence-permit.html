@@ -1,0 +1,92 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Enter your password – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/welsh-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="{{currentUrl}}" method="post">
+      <h1 class="govuk-heading-l">Do you have a valid UK biometric residence permit or card?</h1>
+      
+      <div class="govuk-inset-text">
+        You can use an expired biometric permit or card up to 18 months after its expiry date if you have a smartphone.
+      </div>
+
+      <p class="govuk-body">Choose one of these types of photo ID you can use to confirm your identity:</p>
+
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend">
+              Choose one of these types of photo ID you can use to confirm your identity:
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="residencePermit" name="residencePermit" type="radio" value="brp">
+              <label class="govuk-label govuk-radios__label" for="residencePermit">
+                Biometric residence permit (BRP)
+              </label>
+              <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                You’ll have a user ID if you’ve registered for Self Assessment or filed a tax return online before
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="residencePermit-2" name="residencePermit" type="radio" value="brc">
+              <label class="govuk-label govuk-radios__label" for="residencePermit-2">
+                Biometric residence card (BRC)
+              </label>
+              <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                You might have a BRC if you're in the UK as a family member of an EEA citizen.
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="residencePermit-3" name="residencePermit" type="radio" value="fwp">
+              <label class="govuk-label govuk-radios__label" for="residencePermit-3">
+                Frontier worker permit (FWP)
+              </label>
+              <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                You might have a FWP if you work in the UK but live in another country.
+              </div>
+            </div>
+            <div class="govuk-radios__divider">or</div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="residencePermit-4" name="residencePermit" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="residencePermit-4">
+                I have another photo ID
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Where can I find my photo ID’s expiry date?
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          You’ll find the date of expiry printed in the ‘valid until’ section on your card.
+        </div>
+      </details>
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

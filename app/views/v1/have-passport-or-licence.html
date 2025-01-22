@@ -1,0 +1,73 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Enter your password – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/welsh-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="{{currentUrl}}" method="post">
+      <h1 class="govuk-heading-l">Continue proving your identity online</h1>
+      
+      <p class="govuk-body">You can continue proving your identity online if you:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>have a UK driving licence (full or provisional) or a UK passport</li>
+        <li>can answer some security questions</li>
+      </ul>
+
+      <p class="govuk-body">We use security questions to stop anyone who might have your details from pretending to be you</p>
+
+      <p class="govuk-body">It takes about 10 minutes to prove your identity this way.</p>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              Do you want to use your UK photocard driving licence or UK passport to prove your identity?
+            </h2>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="passportOrLicence" name="passportOrLicence" type="radio" value="licence">
+              <label class="govuk-label govuk-radios__label" for="passportOrLicence">
+                UK photocard driving licence
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="passportOrLicence-2" name="passportOrLicence" type="radio" value="passport">
+              <label class="govuk-label govuk-radios__label" for="passportOrLicence-2">
+                UK passport
+              </label>
+            </div>
+            <div class="govuk-radios__divider">or</div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="passportOrLicence-3" name="passportOrLicence" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="passportOrLicence-3">
+                I do not have either of these types of photo ID
+              </label>
+              <div id="passportOrLicence-item-hint" class="govuk-hint govuk-radios__hint">
+                There may be other ways to prove your identity if you have another type of photo ID.
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
