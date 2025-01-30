@@ -1,0 +1,79 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Enter your email address to sign in – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/welsh-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Check your address</h1>
+
+    <ul class="govuk-list">
+      <li>Postcode</li>
+      <li >
+        <b>AB12 3CD</b> <a class="govuk-link" href="#">Change</a>
+      </li>
+    </ul>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="flatNumber">
+        Flat number
+      </label>
+      <input class="govuk-input govuk-input--width-4" id="flatNumber" name="flatNumber" type="text">
+    </div>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="houseNumber">
+        House number
+      </label>
+      <input class="govuk-input govuk-input--width-4" id="houseNumber" name="houseNumber" type="text">
+    </div>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="houseName">
+        House name
+      </label>
+      <input class="govuk-input govuk-input--width-20" id="houseName" name="houseName" type="text">
+    </div>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="streetName">
+        Street name
+      </label>
+      <input class="govuk-input govuk-input--width-20" id="streetName" name="streetName" type="text">
+    </div>
+
+
+
+    <div class="govuk-form-group">
+      <h2 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--s" for="year">
+          When did you start living here?
+        </label>
+      </h2>
+      <div id="event-name-hint" class="govuk-hint">
+        Enter the year you started living at this address, for example 2017
+      </div>
+      <label class="govuk-label" for="year">
+        Year
+      </label>
+      <input class="govuk-input govuk-input--width-4" id="year" name="year" type="text" aria-describedby="event-name-hint">
+    </div>
+
+    {{ govukButton({
+      text: "Continue",
+      href: "confirm-address-details"
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,89 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Enter your password – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/welsh-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="{{currentUrl}}" method="post">
+      <h1 class="govuk-heading-l">Choose which photo ID you can take to a Post Office</h1>
+      
+      <p class="govuk-body">You cannot use a photocopy or digital copy of your photo ID.</p>
+
+      <p class="govuk-body">Your photo ID must not have expired.</p>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="postOfficeId" name="postOfficeId" type="radio" value="Passport">
+              <label class="govuk-label govuk-radios__label" for="postOfficeId">
+                UK passport
+              </label>
+              <div id="postOfficeId-hint" class="govuk-hint govuk-radios__hint">
+                If your UK passport has expired, you can still use it to prove your identity up to 18 months after its expiry date.
+              </div>      
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="postOfficeId-2" name="postOfficeId" type="radio" value="Non-UK Passport">
+              <label class="govuk-label govuk-radios__label" for="postOfficeId-2">
+                Non-UK passport
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="postOfficeId-3" name="postOfficeId" type="radio" value="Driving licence">
+              <label class="govuk-label govuk-radios__label" for="postOfficeId-3">
+                UK photocard driving licence
+              </label>
+              <div id="postOfficeId-hint" class="govuk-hint govuk-radios__hint">
+                The address on your driving licence must be the same as your current address.
+              </div>      
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="postOfficeId-4" name="postOfficeId" type="radio" value="European driving licence">
+              <label class="govuk-label govuk-radios__label" for="postOfficeId-4">
+                European Union (EU) photocard driving licence
+              </label>
+              <div id="postOfficeId-hint" class="govuk-hint govuk-radios__hint">
+                This must be a plastic photocard, not a paper or handwritten licence. If it has your address on it, it must be your current address.
+              </div>      
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="postOfficeId-5" name="postOfficeId" type="radio" value="idCard">
+              <label class="govuk-label govuk-radios__label" for="postOfficeId-5">
+                National identity card from a European Economic Area (EEA) country
+              </label>
+              <div id="postOfficeId-hint" class="govuk-hint govuk-radios__hint">
+                This must be a plastic photocard, not a paper or handwritten card. If it has your address on it, it must be your current address.
+              </div>      
+            </div>
+            <div class="govuk-radios__divider">or</div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="postOfficeId-6" name="postOfficeId" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="postOfficeId-6">
+                I do not have any of these documents
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Enter your password – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/welsh-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="{{currentUrl}}" method="post">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Does your national identity card have your current address on it?
+            </h1>
+          </legend>
+          <div id="eeaIdAddress-hint" class="govuk-hint">
+            If your national identity card has your previous address on it, you'll need to choose another type of photo ID.
+          </div>       
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="eeaIdAddress" name="eeaIdAddress" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="eeaIdAddress">
+                Yes, it has my current address on it
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="eeaIdAddress-2" name="eeaIdAddress" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="eeaIdAddress-2">
+                No, it has my previous address on it
+              </label>
+            </div>
+            <div class="govuk-radios__divider">or</div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="eeaIdAddress-3" name="eeaIdAddress" type="radio" value="noLicenceAddress">
+              <label class="govuk-label govuk-radios__label" for="eeaIdAddress-3">
+                My national identity card does not have my address on it
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            How do I change the address on my driving licence?
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body">
+            You must update your driving licence when you move. <a href="#" class="govuk-link">Tell DVLA you’ve changed address (opens in new tab)</a>.
+          </p>
+        </div>
+      </details>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

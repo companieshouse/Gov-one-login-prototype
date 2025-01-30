@@ -19,22 +19,19 @@ Enter your password – {{ serviceName }} – GOV.UK Prototype Kit
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-              Do you have a valid passport?
+              Does your passport have an expiry date?
             </h1>
-          </legend>
-          <div id="validPassport-hint" class="govuk-hint">
-            If you have a passport, you can use it to confirm your identity.
-          </div>       
+          </legend>       
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="validPassport" name="validPassport" type="radio" value="yes">
-              <label class="govuk-label govuk-radios__label" for="validPassport">
+              <input class="govuk-radios__input" id="passportHaveExpiry" name="passportHaveExpiry" type="radio" value="expire">
+              <label class="govuk-label govuk-radios__label" for="passportHaveExpiry">
                 Yes
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="validPassport-2" name="validPassport" type="radio" value="no">
-              <label class="govuk-label govuk-radios__label" for="validPassport-2">
+              <input class="govuk-radios__input" id="passportHaveExpiry-2" name="passportHaveExpiry" type="radio" value="no expire">
+              <label class="govuk-label govuk-radios__label" for="passportHaveExpiry-2">
                 No
               </label>
             </div>

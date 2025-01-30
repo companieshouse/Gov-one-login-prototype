@@ -1,0 +1,50 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Enter your email address to sign in – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/welsh-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Choose your address</h1>
+
+    <ul class="govuk-list">
+      <li>Postcode</li>
+      <li >
+        <b>AB12 3CD</b> <a class="govuk-link" href="#">Change</a>
+      </li>
+    </ul>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="sort">
+        Choose your current home address from the list
+      </label>
+      <select class="govuk-select" id="sort" name="sort">
+        <option value="address1">Oxford House, Oxford Row, Leeds, AB12 3CD</option>
+        <option value="address2">Office 14 New Station St, Leeds, AB12 3CD</option>
+        <option value="address3">38 Park Square North, Leeds, AB12 3CD</option>
+        <option value="address4">Lion House, 41, York Place, Leeds, AB12 3CD</option>
+      </select>
+    </div>
+
+    <p class="govuk-body">
+      <a href="#" class="govuk-link">I cannot find my address in the list</a>
+    </p>
+
+    {{ govukButton({
+      text: "Choose address",
+      href: "check-address"
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,75 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Enter your email address to sign in – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/welsh-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Enter your name exactly as it appears on your photo ID</h1>
+    <div class="govuk-form-group">
+        <label class="govuk-label" for="lastName">
+          Last name
+        </label>
+      <input class="govuk-input" id="lastName" name="lastName" type="text">
+    </div>
+
+    <p class="govuk-body">Given names</p>
+
+    <div class="govuk-inset-text">
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="firstName">
+          First name
+        </label>
+        <input class="govuk-input govuk-input--width-20" id="firstName" name="firstName" type="text">
+
+        <label class="govuk-label" for="middleName">
+          Middle name(s)
+        </label>
+        <div id="middleName-hint" class="govuk-hint">
+          Leave this blank if you do not have any middle names
+        </div>
+        <input class="govuk-input govuk-input--width-20" id="middleName" name="middleName" type="text">
+      </div>
+    </div>
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Names and letters you cannot enter
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body">For technical reasons, we cannot accept:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>single letter names</li>
+          <li>names with special characters or accent marks</li>
+        </ul>
+
+        <p class="govuk-body">You can enter your name using letters without special characters.</p>
+
+        <p class="govuk-body">Use a, e, o, u instead of á, é, ó, ú. For example, if your name is Renée, enter it as Renee.</p>
+
+        <p class="govuk-body">
+          If you’re having problems entering your name, you can also <a href="#" class="govuk-link">contact the GOV.UK One Login team (opens in new tab).</a>
+        </p>
+      </div>
+    </details>
+
+    {{ govukButton({
+      text: "Continue",
+      href: "dob"
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
