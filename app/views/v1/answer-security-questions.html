@@ -13,17 +13,32 @@ Enter your email address to sign in – {{ serviceName }} – GOV.UK Prototype K
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="{{currentUrl}}" method="post">
-      <h1 class="govuk-heading-l">We need to check your details</h1>
+      <h1 class="govuk-heading-l">Answer security questions</h1>
 
-      <p class="govuk-body">Your details will be checked against information held by another organisation.</p>
+      <p class="govuk-body">We'll ask you some security questions that only 
+        you should know the answers to. This will help us stop anyone else 
+        who might have your details from pretending to be you.
+      </p>
 
-      <p class="govuk-body">This will help us protect you against online identity theft.</p>
+      <p class="govuk-body">The questions will be about things like your 
+        mobile phone contract, bank account, and any credit cards, loans 
+        or mortgages you have.
+      </p>
+
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+          Try to answer these questions as accurately as you can. You will not be able to change your answers if you make a mistake.
+        </strong>
+      </div>
+
+      <p class="govuk-body">We will not keep your answers.</p>
 
       <details class="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
-            Who we check your details with
+            How we know what questions to ask you
           </span>
         </summary>
         <div class="govuk-details__text">
@@ -41,13 +56,10 @@ Enter your email address to sign in – {{ serviceName }} – GOV.UK Prototype K
         </div>
       </details>
 
-      <p class="govuk-body">It can take up to 30 seconds to check your details. After you continue, do not reload or close this page.</p>
-
       {{ govukButton({
-        text: "Continue"
+        text: "Continue",
+        href: "security-question-mortgage"
       }) }}
-
-    </form>
 
   </div>
 </div>

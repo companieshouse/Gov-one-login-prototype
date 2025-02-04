@@ -1,0 +1,79 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Enter your password – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/welsh-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              How much of your loan do you pay back every month?
+            </h1>
+          </legend>
+          <div id="loan-hint" class="govuk-hint">
+            Think about the amount you're meant to pay back every month on a personal 
+            loan. This does not include hire purchase agreements, second mortgages, 
+            home credit loans or student loans.
+          </div>
+          <div id="loan-hint-2" class="govuk-hint">
+            You can find this amount on your loan agreement.
+          </div>        
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="loan" name="loan" type="radio">
+              <label class="govuk-label govuk-radios__label" for="loan">
+                UP TO £ 500
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="loan-2" name="loan" type="radio">
+              <label class="govuk-label govuk-radios__label" for="loan-2">
+                OVER £500 UP TO £550
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="loan-3" name="loan" type="radio">
+              <label class="govuk-label govuk-radios__label" for="loan-3">
+                OVER £550 UP TO £600
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="loan-4" name="loan" type="radio">
+              <label class="govuk-label govuk-radios__label" for="loan-4">
+                OVER £600 UP TO £650
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="loan-5" name="loan" type="radio">
+              <label class="govuk-label govuk-radios__label" for="loan-5">
+                None of the above / does not apply
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: "Continue",
+        href: "security-question-account"
+      }) }}
+
+      <p class="govuk-body">
+        <a href="#" class="govuk-link">I cannot answer this question</a>
+      </p>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -19,6 +19,23 @@
     padding-bottom: 20px;
 }
 
+.spinner {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 24px;
+  margin: auto;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 .grey-box {
   background-color: #F3F2F1;
   padding-top: 40px;

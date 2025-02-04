@@ -18,23 +18,23 @@ Enter your password – {{ serviceName }} – GOV.UK Prototype Kit
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-              Which iPhone model do you have?
+              Do you have a valid UK photocard driving licence?
             </h1>
           </legend>
-          <div id="validPassport-hint" class="govuk-hint">
-            The iPhone 7 was released in 2016. If you purchased your smartphone after 2016, you likely have an iPhone 7 or newer.
+          <div id="validDrivingLicence-hint" class="govuk-hint">
+            You cannot use an expired licence or a photocopy or digital copy of your licence.
           </div>       
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="iphoneModel" name="iphoneModel" type="radio" value="7">
-              <label class="govuk-label govuk-radios__label" for="iphoneModel">
-                iPhone 7 or newer
+              <input class="govuk-radios__input" id="validDrivingLicence" name="validDrivingLicence" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="validDrivingLicence">
+                Yes
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="iphoneModel-2" name="iphoneModel" type="radio" value="6">
-              <label class="govuk-label govuk-radios__label" for="iphoneModel-2">
-                iPhone 6s or older
+              <input class="govuk-radios__input" id="validDrivingLicence-2" name="validDrivingLicence" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="validDrivingLicence-2">
+                No
               </label>
             </div>
           </div>
@@ -44,24 +44,11 @@ Enter your password – {{ serviceName }} – GOV.UK Prototype Kit
       <details class="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
-            How do I know which iPhone I have?
+            How do I know my driving licence is valid?
           </span>
         </summary>
         <div class="govuk-details__text">
-          You can easily find the iPhone model you have by going to Settings > General > About and looking at the ‘Model Name’.
-        </div>
-      </details>
-
-      <details class="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            What if I have an iPhone SE?
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <p>If you have an iPhone SE from 2022 (3rd generation) or from 2020 (2nd generation), select ‘iPhone 7 or newer’.</p>
-
-          <p>If you have an iPhone SE from 2016 (1st generation), select ‘iPhone 6s or older’.</p>
+          Your full or provisional licence is valid until the expiry date printed in section 4b on your licence card.
         </div>
       </details>
 
