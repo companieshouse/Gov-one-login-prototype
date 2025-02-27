@@ -1,0 +1,67 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Other reason
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/welsh-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="interruption-card">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <img src="/public/images/crown-logo.png" alt="crown-logo">  
+      <h1 class="govuk-heading-l govuk-!-margin-top-5">Use your BRP, BRC or FWP and a GOV.UK app to confirm your identity</h1>
+
+      <p class="govuk-body">Based on what you’ve told us, the GOV.UK ID Check app is the best way to confirm your identity.</p>
+      <p class="govuk-body govuk-!-font-weight-bold">Next, you’ll be guided step by step to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+
+        <li>Download the app.</li>
+        <li>Take a photo of your BRP, BRC or FWP.</li>
+        <li>Scan the biometric chip on your BRP, BRC or FWP.</li>
+        <li>Scan your face with your selfie camera.</li>
+      </ul>
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-link govuk-!-margin-top-5 govuk-link--interrupt",
+        href: "download-app"
+      }) }}
+    </div>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <details class="govuk-details govuk-!-margin-top-5">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          This app verifies your face with coloured light
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p>The app face scan uses a randomly generated sequence of colours to check you are a real person. The colours in the brief sequence change less than 3 times per second.</p>
+
+        <p>If you think you might be sensitive to the sequence of colours, you can <a href="#" class="govuk-link">confirm your identity another way</a>.</p>
+      </div>
+    </details>
+
+    <h2 class="govuk-heading-m">How we use your data</h2>
+      
+    <p class="govuk-body">We collect your data securely and delete it when it’s no longer needed. Read our full <a href="#" class="govuk-link">privacy notice</a>.</p>
+    
+    <h2 class="govuk-heading-m">Accessibility</h2>
+    
+    <p class="govuk-body">Read our <a href="#" class="govuk-link">accessibility statement</a>.</p>
+    
+    <h2 class="govuk-heading-m">Other ways to confirm your identity</h2>
+    
+    <p class="govuk-body">Not sure you can use the app? You’ll be able to try other ways to confirm your identity when you continue.</p>
+
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Enter your email address to sign in – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/welsh-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Enter your account details</h1>
+    
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="sortCode">
+        Sort code
+      </label>
+      <div id="sortCode-hint" class="govuk-hint">
+        Your sort code is 6 digits long. It is 3 pairs of numbers. For example, 802650.
+      </div>
+      <input class="govuk-input govuk-input--width-5" id="sortCode" name="sortCode" type="text">
+    </div>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="accountNumber">
+        Account number
+      </label>
+      <div id="accountNumber-hint" class="govuk-hint">
+        Your account number is between 6 and 8 digits long. For example, 10014069.
+      </div>
+      <input class="govuk-input govuk-input--width-10" id="accountNumber" name="accountNumber" type="text">
+    </div>
+
+    {{ govukButton({
+      text: "Continue",
+      href: "check-bank-details"
+    }) }}
+
+    <p class="govuk-body">
+      <a href="#" class="govuk-link">Contact the GOV.UK One Login team (opens in new tab)</a>
+    </p>
+
+  </div>
+</div>
+
+{% endblock %}

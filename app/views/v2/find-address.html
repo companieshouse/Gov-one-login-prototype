@@ -1,0 +1,39 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Enter your email address to sign in – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/welsh-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Find your address {{ data['success'] }}</h1>
+    <div class="govuk-form-group">
+      <h2 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--m" for="findAddress">
+          Enter your postcode
+        </label>
+      </h2>
+      <div id="event-name-hint" class="govuk-hint">
+        Enter the postcode of your current home address. This must be a UK postcode, for example SW1A 2AA.
+      </div>
+    
+      <input class="govuk-input govuk-input--width-10" id="findAddress" name="findAddress" type="text">
+    </div>
+
+    {{ govukButton({
+      text: "Find address",
+      href: "choose-address"
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}

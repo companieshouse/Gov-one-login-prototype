@@ -1,0 +1,73 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Other reason
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/welsh-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Download or open the GOV.UK ID Check app</h1>
+
+    <p class="govuk-body">We’ll give you step by step instructions on how to use the app when you open it.</p>
+
+    {{ govukButton({
+      text: "Download or open GOV.UK ID Check",
+      href: "one-login-working"
+    }) }}
+
+    <details class="govuk-details govuk-!-margin-top-5">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Help with downloading the app
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <ol class="govuk-list govuk-list--number">
+          <li>DTap the 'Download GOV.UK ID Check' button to open the App Store.</li>
+          <li>In the app store, tap the 'Get' button next to the GOV.UK ID Check app icon.</li>
+          <li>When the app has been downloaded, tap 'Open' to use the app.</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="govuk-details govuk-!-margin-top-5">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          I’d prefer not to use the app
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body">If you’d prefer not to use the app, you may still be able to <a href="#" class="govuk-link">confirm your identity another way</a>.</p>
+    
+        <p class="govuk-body">You’ll still need photo ID and other ways of confirming your identity may not provide an instant result.</p>
+      </div>
+    </details>
+
+    <hr>
+
+    <h2 class="govuk-heading-m">Link GOV.UK ID Check</h2>
+      
+    <p class="govuk-body">Tap the button below if you were asked to come back to this window.</p>
+    
+    {{ govukButton({
+      text: "Link GOV.UK ID Check"
+    }) }}
+
+    <div class="govuk-inset-text">
+      <p class="govuk-body">Problems using the app? You can <a href="#" class="govuk-link">confirm your identity another way</a>.</p>
+    
+      <p class="govuk-body">For additional help, <a href="#" class="govuk-link">contact the GOV.UK ID Check support team.</a>.</p>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Enter your email address to sign in – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/welsh-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Enter your National Insurance number</h1>
+
+    <p class="govuk-body">We’ll use your National Insurance number to check your HMRC record as part of proving your identity.</p>
+
+    <p class="govuk-body">You can find it on your payslip, P60 or benefit letter.</p>
+    
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="niNumber">
+        National Insurance number
+      </label>
+      <div id="niNumber-hint" class="govuk-hint">
+        For example, ‘QQ 12 34 56 C’.
+      </div>
+      <input class="govuk-input govuk-input--width-10" id="niNumber" name="niNumber" type="text">
+    </div>
+
+    {{ govukButton({
+      text: "Check and continue",
+      href: "find-address"
+    }) }}
+
+    <p class="govuk-body">
+      <a href="#" class="govuk-link">I do not have my National Insurance number</a>
+    </p>
+
+  </div>
+</div>
+
+{% endblock %}

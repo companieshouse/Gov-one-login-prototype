@@ -1,0 +1,41 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Enter your email address to sign in – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/welsh-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Select which country your passport is from</h1>
+
+    <p class="govuk-body">If the country your passport is from is not on the list, you'll need to choose another type of photo ID.</p>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="sort">
+        Select country
+      </label>
+      <select class="govuk-select" id="sort" name="sort">
+      </select>
+    </div>
+
+    <p class="govuk-body">
+      <a href="#" class="govuk-link">The country my passport is from is not on the list</a>
+    </p>
+
+    {{ govukButton({
+      text: "Continue",
+      href: "find-post-office"
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
