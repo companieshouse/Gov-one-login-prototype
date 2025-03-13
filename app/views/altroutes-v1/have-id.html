@@ -1,0 +1,71 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Enter your password – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/welsh-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="{{currentUrl}}" method="post">
+      <h1 class="govuk-heading-l">Tell us if you have one of the following types of photo ID</h1>
+      
+      <p class="govuk-body">This will help us find the best way for you to prove your identity.</p>
+
+      <p class="govuk-body">You can use one of the following types of photo ID:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>UK photocard driving licence</li>
+        <li>UK passport</li>
+        <li>non-UK passport with a biometric chip</li>
+        <li>UK biometric residence permit (BRP)</li>
+        <li>UK biometric residence card (BRC)</li>
+        <li>UK Frontier Worker permit (FWP)</li>
+      </ul>
+      
+      <div class="govuk-inset-text">
+        You can use an expired BRP, BRC or FWP up to 18 months after its expiry date if you have a smartphone.
+      </div>
+
+      <p class="govuk-body">Find out more about the different types of <a href="#" class="govuk-link">photo ID we accept (opens in a new tab)</a>.</p>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              Do you have any of these types of photo ID?
+            </h2>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="typeOfId" name="typeOfId" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="typeOfId">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="typeOfId-2" name="typeOfId" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="typeOfId-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

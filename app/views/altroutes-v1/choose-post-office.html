@@ -1,0 +1,90 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Enter your password – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/welsh-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="{{currentUrl}}" method="post">
+      <h1 class="govuk-heading-l">Choose a Post Office where you can prove your identity</h1>
+
+      <h2 class="govuk-heading-m">Postcode</h2>
+
+      <h2 class="govuk-heading-m">SW2 1AA <a href="#" class="govuk-link">Change</a></h2>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="choosePostOffice" name="choosePostOffice" type="radio" value="passport">
+              <label class="govuk-label govuk-radios__label" for="choosePostOffice">
+                Brixton Hill
+              </label>
+              <div id="postOfficeId-hint" class="govuk-hint govuk-radios__hint">
+                106 Brixton Hill, London, SW2 1AH
+              </div>      
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="choosePostOffice-2" name="choosePostOffice" type="radio" value="nonUKPassport">
+              <label class="govuk-label govuk-radios__label" for="choosePostOffice-2">
+                Elm Park
+              </label>
+              <div id="postOfficeId-hint" class="govuk-hint govuk-radios__hint">
+                66 Elm Park, London, SW2 2UB
+              </div> 
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="choosePostOffice-3" name="choosePostOffice" type="radio" value="drivingLicence">
+              <label class="govuk-label govuk-radios__label" for="choosePostOffice-3">
+                Herne Hill
+              </label>
+              <div id="postOfficeId-hint" class="govuk-hint govuk-radios__hint">
+                31-39 Norwood Road, London, SE24 9QG
+              </div>      
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="choosePostOffice-4" name="choosePostOffice" type="radio" value="euDrivingLicence">
+              <label class="govuk-label govuk-radios__label" for="choosePostOffice-4">
+                Clapham Common
+              </label>
+              <div id="postOfficeId-hint" class="govuk-hint govuk-radios__hint">
+                161-163 Clapham High Street, London, SW4 7ST
+              </div>      
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="choosePostOffice-5" name="choosePostOffice" type="radio" value="idCard">
+              <label class="govuk-label govuk-radios__label" for="choosePostOffice-5">
+                Streatham Hill
+              </label>
+              <div id="postOfficeId-hint" class="govuk-hint govuk-radios__hint">
+                102 Streatham Hill, London, SW2 4UQ
+              </div>      
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: "Continue",
+        href: "check-answers"
+      }) }}
+
+      <p class="govuk-body">
+        <a href="#" class="govuk-link">I want to prove my identity another way</a>
+      </p>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

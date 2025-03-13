@@ -1,0 +1,74 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Enter your password – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/welsh-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              How much did you borrow when you first took out your mortgage?
+            </h1>
+          </legend>
+          <div id="mortgage-hint" class="govuk-hint">
+            You can find this amount on your offer letter or mortgage agreement.
+          </div>        
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="mortgage" name="mortgage" type="radio">
+              <label class="govuk-label govuk-radios__label" for="mortgage">
+                UP TO £160,000
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="mortgage-2" name="mortgage" type="radio">
+              <label class="govuk-label govuk-radios__label" for="mortgage-2">
+                OVER £160,000 UP TO £185,000
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="mortgage-3" name="mortgage" type="radio">
+              <label class="govuk-label govuk-radios__label" for="mortgage-3">
+                OVER £185,000 UP TO £210,000
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="mortgage-4" name="mortgage" type="radio">
+              <label class="govuk-label govuk-radios__label" for="mortgage-4">
+                OVER £210,000 UP TO £235,000
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="mortgage-5" name="mortgage" type="radio">
+              <label class="govuk-label govuk-radios__label" for="mortgage-5">
+                NONE OF THE ABOVE / DOES NOT APPLY
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: "Continue",
+        href: "security-question-loan"
+      }) }}
+
+      <p class="govuk-body">
+        <a href="#" class="govuk-link">I cannot answer this question</a>
+      </p>
+
+  </div>
+</div>
+
+{% endblock %}

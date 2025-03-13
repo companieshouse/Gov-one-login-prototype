@@ -1,0 +1,61 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Enter your password – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/welsh-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="{{currentUrl}}" method="post">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Does your passport have this symbol on the cover?
+            </h1>
+          </legend>
+          <div id="passportLogo-hint" class="govuk-hint">
+            This symbol means that your passport has a biometric chip.
+          </div>  
+          <div id="passportLogo-2-hint" class="govuk-hint">
+            f your passport has this symbol, you can use it to confirm your identity.
+          </div> 
+          <div id="passportLogo-3-hint" class="govuk-hint">
+            If you're not sure what the biometric chip icon looks like, check the illustration below.
+          </div>   
+          <img src="/public/images/passport-logo.png" alt="passport-logo">   
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="passportLogo" name="passportLogo" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="passportLogo">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="passportLogo-2" name="passportLogo" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="passportLogo-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

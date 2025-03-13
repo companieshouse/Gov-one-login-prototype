@@ -1,0 +1,83 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Enter your password – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/welsh-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="{{currentUrl}}" method="post">
+      <h1 class="govuk-heading-l">Prove your identity at a Post Office with one of the following types of photo ID</h1>
+      
+      <p class="govuk-body">Based on what you told us, you cannot prove your identity online.</p>
+
+      <p class="govuk-body">If you have any of the following types of photo ID, you can prove your identity at a Post Office instead.</p>
+
+      <h2 class="govuk-heading-m">European Union (EU) photocard driving licence</h2>
+      
+      <p class="govuk-body">You can use an EU driving licence if:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>it is a plastic photocard, not a paper or handwritten licence</li>
+        <li>it has not expired</li>
+        <li>the address on it is the same as your current address (if it has an address)</li>
+      </ul>
+
+      <h2 class="govuk-heading-m">Non-UK passport</h2>
+      
+      <p class="govuk-body">You can use a non-UK passport as long as it has not expired.</p>
+      
+      <h2 class="govuk-heading-m">National identity card from a European Economic Area country</h2>
+      
+      <p class="govuk-body">You can use a national identity card from a European Economic Area (EEA) country if:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>it is a plastic photocard, not a paper or handwritten card</li>
+        <li>it has not expired</li>
+        <li>the address on it is the same as your current address (if it has an address)</li>
+      </ul>
+
+      <p class="govuk-body">The EEA includes EU countries, Norway, Iceland and Liechtenstein.</p>
+
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              Do you have any of these types of photo ID?
+            </h2>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="postOfficeId" name="postOfficeId" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="postOfficeId">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="postOfficeId-2" name="postOfficeId" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="postOfficeId-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

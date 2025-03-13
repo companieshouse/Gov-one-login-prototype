@@ -1,0 +1,39 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Enter your email address to sign in – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/welsh-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Find a Post Office where you can prove your identity</h1>
+    <div class="govuk-form-group">
+      <h2 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--m" for="findPostOffice">
+          Enter a UK postcode
+        </label>
+      </h2>
+      <div id="findPostOffice-hint" class="govuk-hint">
+        For example, SW1A 2AA
+      </div>
+    
+      <input class="govuk-input govuk-input--width-10" id="findPostOffice" name="findPostOffice" type="text">
+    </div>
+
+    {{ govukButton({
+      text: "Find address",
+      href: "choose-post-office"
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Enter your password – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/welsh-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="{{currentUrl}}" method="post">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Do you have a smartphone you can use?
+            </h1>
+          </legend>
+          <div id="haveSmartphone-hint" class="govuk-hint">
+            You need a smartphone with working front (selfie) and rear cameras for some ways of confirming your identity.
+          </div>
+          <div id="haveSmartphone2-hint" class="govuk-hint">
+            If you can use a smartphone to confirm your identity, we will guide you to switch devices later.</p>
+          </div>         
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="haveSmartphone" name="haveSmartphone" type="radio" value="iphone">
+              <label class="govuk-label govuk-radios__label" for="haveSmartphone">
+                Yes, I have an iPhone
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="haveSmartphone-2" name="haveSmartphone" type="radio" value="android">
+              <label class="govuk-label govuk-radios__label" for="haveSmartphone-2">
+                Yes, I have an Android phone (for example, Samsung, Google Pixel, OPPO)
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="haveSmartphone-3" name="haveSmartphone" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="haveSmartphone-3">
+                I don't have either of these
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,75 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Enter your password – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/welsh-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              When did you open your current account?
+            </h1>
+          </legend>
+          <div id="currentAccount-hint" class="govuk-hint">
+            Think about your current account only. This does not include any joint, business or saving accounts you might have.
+          </div>      
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="currentAccount" name="currentAccount" type="radio">
+              <label class="govuk-label govuk-radios__label" for="currentAccount">
+                04/2017
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="currentAccount-2" name="currentAccount" type="radio">
+              <label class="govuk-label govuk-radios__label" for="currentAccount-2">
+                10/2017
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="currentAccount-3" name="currentAccount" type="radio">
+              <label class="govuk-label govuk-radios__label" for="currentAccount-3">
+                03/2021
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="currentAccount-4" name="currentAccount" type="radio">
+              <label class="govuk-label govuk-radios__label" for="currentAccount-4">
+                01/2021
+
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="currentAccount-5" name="currentAccount" type="radio">
+              <label class="govuk-label govuk-radios__label" for="currentAccount-5">
+                NONE OF THE ABOVE / DOES NOT APPLY
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: "Continue",
+        href: "go-to-service"
+      }) }}
+
+      <p class="govuk-body">
+        <a href="#" class="govuk-link">I cannot answer this question</a>
+      </p>
+
+  </div>
+</div>
+
+{% endblock %}

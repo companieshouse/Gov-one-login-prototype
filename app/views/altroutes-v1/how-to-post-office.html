@@ -1,0 +1,74 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Prove your identity with GOV.UK account GOV.UK – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/welsh-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        How to prove your identity at a Post Office
+      </h1>
+
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">1</span>
+        <strong class="govuk-warning-text__text govuk-heading-m">
+          Get your Post Office customer letter from GOV.UK
+        </strong>
+        <p class="govuk-body">Enter the details from your photo ID on GOV.UK.</p>
+
+        <p class="govuk-body">Then select which Post Office you want to take your photo ID to.</p>
+  
+        <p class="govuk-body">We'll send you a confirmation email with a link to download your Post Office customer letter.</p>  
+      </div>
+
+
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">2</span>
+        <strong class="govuk-warning-text__text govuk-heading-m">
+          Go to the Post Office
+        </strong>
+        <p class="govuk-body">Take your Post Office customer letter and photo ID to your chosen Post Office. Or go to any 
+          <a href="#" class="govuk-link">Post Office that offers in-branch verification (opens in new tab).</a>
+        </p>
+  
+        <p class="govuk-body">A member of Post Office staff will scan your photo ID and take a photo of you.</p>  
+
+        <div class="govuk-inset-text">
+          You must go to the Post Office within 10 days of getting your confirmation email.
+        </div>
+      </div>
+
+
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">3</span>
+        <strong class="govuk-warning-text__text govuk-heading-m">
+          Wait for your result
+        </strong>
+        <p class="govuk-body">You'll get an email about the result of your identity check - usually within a day of going to the Post Office.</p>
+      </div>
+
+      {{ govukButton({
+        text: "Continue",
+        href: "post-office-id"
+      }) }}
+
+      <p class="govuk-body"><a href="#" class="govuk-link">I want to prove my identity another way</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}

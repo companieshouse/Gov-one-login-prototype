@@ -1,0 +1,64 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Enter your password – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/welsh-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="{{currentUrl}}" method="post">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Do you have a valid UK photocard driving licence?
+            </h1>
+          </legend>
+          <div id="validDrivingLicence-hint" class="govuk-hint">
+            You cannot use an expired licence or a photocopy or digital copy of your licence.
+          </div>       
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="validDrivingLicence" name="validDrivingLicence" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="validDrivingLicence">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="validDrivingLicence-2" name="validDrivingLicence" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="validDrivingLicence-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            How do I know my driving licence is valid?
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          Your full or provisional licence is valid until the expiry date printed in section 4b on your licence card.
+        </div>
+      </details>
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

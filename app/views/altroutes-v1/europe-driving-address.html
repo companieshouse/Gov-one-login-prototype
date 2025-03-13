@@ -1,0 +1,74 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Enter your password – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/welsh-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="{{currentUrl}}" method="post">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Does your driving licence have your current address on it?
+            </h1>
+          </legend>
+          <div id="europeDrivingAddress-hint" class="govuk-hint">
+            If your driving licence has your previous address on it, you'll need to choose another type of photo ID.
+          </div>       
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="europeDrivingAddress" name="europeDrivingAddress" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="europeDrivingAddress">
+                Yes, it has my current address on it
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="europeDrivingAddress-2" name="europeDrivingAddress" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="europeDrivingAddress-2">
+                No, it has my previous address on it
+              </label>
+            </div>
+            <div class="govuk-radios__divider">or</div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="europeDrivingAddress-3" name="europeDrivingAddress" type="radio" value="noLicenceAddress">
+              <label class="govuk-label govuk-radios__label" for="europeDrivingAddress-3">
+                My driving licence does not have my address on it
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            How do I change the address on my driving licence?
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body">
+            You must update your driving licence when you move. <a href="#" class="govuk-link">Tell DVLA you’ve changed address (opens in new tab)</a>.
+          </p>
+        </div>
+      </details>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
