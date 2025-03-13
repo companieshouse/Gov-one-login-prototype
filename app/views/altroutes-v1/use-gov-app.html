@@ -1,0 +1,65 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Enter your password – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/welsh-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="{{currentUrl}}" method="post">
+      <h1 class="govuk-heading-l">You need to prove your identity using a GOV.UK app</h1>
+
+      <p class="govuk-body">You’ll need a:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>passport with a biometric chip</li>
+        <li>smartphone - this must be an iPhone 7 or newer or an Android smartphone</li>
+      </ul>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              What would you like to do?
+            </h2>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="useGovApp" name="useGovApp" type="radio" value="app">
+              <label class="govuk-label govuk-radios__label" for="useGovApp">
+                Prove your identity with the GOV.UK ID Check app
+              </label>
+              <div id="useGovApp-item-hint" class="govuk-hint govuk-radios__hint">
+                You’ll be told how to download and use the app
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="useGovApp-2" name="useGovApp" type="radio" value="service">
+              <label class="govuk-label govuk-radios__label" for="useGovApp-2">
+                Go to the service you were trying to use
+              </label>
+              <div id="useGovApp-2-item-hint" class="govuk-hint govuk-radios__hint">
+                Look for other ways to access the service if you cannot use the app.
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
