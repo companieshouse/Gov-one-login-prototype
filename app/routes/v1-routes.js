@@ -15,6 +15,37 @@ router.use((req, res, next) => {
   next()  
 }) 
 
+// ******* sle-of-mann javascript ********************************
+router.get('/v1/isle-of-mann', function (req, res) {
+  // Set URl
+  res.render('v1/isle-of-mann', {
+    currentUrl: req.originalUrl
+  })
+})
+
+router.post('/v1/isle-of-mann', function (req, res) {
+  if (req.session.data['isleOfMann'] === 'yes') {
+    res.redirect('/v1/have-id')
+  } else {
+    // User inputted value so move to next page
+    res.redirect('/v1/use-gov-app')
+  }
+})
+
+
+// ******* use-gov-app javascript ********************************
+router.get('/v1/use-gov-appn', function (req, res) {
+  // Set URl
+  res.render('v1/use-gov-app', {
+    currentUrl: req.originalUrl
+  })
+})
+
+router.post('/v1/use-gov-app', function (req, res) {
+  if (req.session.data['useGovApp'] === 'app') {
+    res.redirect('/v1/computer-or-tablet')
+  }
+})
 
 // ******* need-replacement-address javascript ********************************
 router.get('/v1/have-id', function (req, res) {
