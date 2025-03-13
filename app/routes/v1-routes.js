@@ -16,15 +16,15 @@ router.use((req, res, next) => {
 }) 
 
 // ******* sle-of-mann javascript ********************************
-router.get('/v1/isle-of-mann', function (req, res) {
+router.get('/v1/isle-of-man', function (req, res) {
   // Set URl
-  res.render('v1/isle-of-mann', {
+  res.render('v1/isle-of-man', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/v1/isle-of-mann', function (req, res) {
-  if (req.session.data['isleOfMann'] === 'yes') {
+router.post('/v1/isle-of-man', function (req, res) {
+  if (req.session.data['isleOfMan'] === 'yes') {
     res.redirect('/v1/have-id')
   } else {
     // User inputted value so move to next page
