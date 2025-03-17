@@ -44,6 +44,8 @@ router.get('/altroutes-v1/use-gov-appn', function (req, res) {
 router.post('/altroutes-v1/use-gov-app', function (req, res) {
   if (req.session.data['useGovApp'] === 'app') {
     res.redirect('/altroutes-v1/computer-or-tablet')
+  } else {
+    res.redirect('https://prove-your-identity-prototype.herokuapp.com/alt-routes-v1/post-one-login/alt-route-start')
   }
 })
 
